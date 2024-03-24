@@ -1,3 +1,1 @@
-#!/bin/bash
-
-xfce4-popup-clipman
+exec xfce4-popup-clipman
