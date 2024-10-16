@@ -12,8 +12,12 @@ then
 	# Get the IP address
 	ipAddr=$(ip a | grep -oP '192\.168\.\d+\.\d+' | head -n 1)
 	# Echo it with the wifi glyph
-	echo "  $ipAddr"
+	echo " $ipAddr"
+elif ip a | grep -q wlan0
+then
+	ipAddr=$(ip a | grep -oP '192\.168\.\d+\.\d+' | head -n 1)
+	echo " $ipAddr"
 else
 	# If neither tun0 nor wlo1 are up, echo the ethernet glyph
-	echo ""
+	echo " No wifi network"
 fi
